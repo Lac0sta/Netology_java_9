@@ -2,8 +2,8 @@ package ru.netology.stats;
 
 public class StatsService {
 
-    public double getSumAmount() { // Считаем сумму всех продаж
-        double sales[] = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+    public double getSumAmount(double sales[]) { // Считаем сумму всех продаж
+
         double sum = 0;
         for (int i = 0; i < sales.length; i++) {
             sum = sum + sales[i];
@@ -11,8 +11,8 @@ public class StatsService {
         return sum;
     }
 
-    public double getAvgSum() { // Считаем среднюю сумму продаж в месяц
-        double sales[] = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+    public double getAvgSum(double sales[]) { // Считаем среднюю сумму продаж в месяц
+
         double avg = 0;
         if (sales.length > 0) {
             int sum = 0;
@@ -24,8 +24,8 @@ public class StatsService {
         return avg;
     }
 
-    public int maxSalesMonth() { // Номер месяца, в котором был пик продаж (осуществлены продажи на максимальную сумму)*
-        double sales[] = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+    public int maxSalesMonth(double sales[]) { // Номер месяца, в котором был пик продаж (осуществлены продажи на максимальную сумму)*
+
         int maxMonth = 0;
         int month = 0;
         for (double sale : sales) {
@@ -37,8 +37,8 @@ public class StatsService {
         return maxMonth + 1;
     }
 
-    public int minSalesMonth() { // Номер месяца, в котором был спад продаж (осуществлены продажи на минимальную сумму)*
-        double sales[] = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+    public int minSalesMonth(double sales[]) { // Номер месяца, в котором был спад продаж (осуществлены продажи на минимальную сумму)*
+
         int minMonth = 0;
         int month = 0;
         for (double sale : sales) {
@@ -50,8 +50,8 @@ public class StatsService {
         return minMonth + 1;
     }
 
-    public int monthNumberLow() { // Кол-во месяцев, в которых продажи были ниже среднего
-        double sales[] = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+    public int monthNumberLow(double sales[]) { // Кол-во месяцев, в которых продажи были ниже среднего
+
         int avg = 0;
         if (sales.length > 0) {
             int sum = 0;
@@ -70,8 +70,8 @@ public class StatsService {
     }
 
 
-    public int monthNumberHigh() { // Кол-во месяцев, в которых продажи были выше среднего
-        double sales[] = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+    public int monthNumberHigh(double sales[]) { // Кол-во месяцев, в которых продажи были выше среднего
+
         int avg = 0;
         if (sales.length > 0) {
             int sum = 0;

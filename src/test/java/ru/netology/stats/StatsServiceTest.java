@@ -1,79 +1,82 @@
 package ru.netology.stats;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.api.Test;
 
 public class StatsServiceTest {
 
-    @ParameterizedTest
-    @CsvSource({
-            "180"
-    })
-    public void testSumAmount(int expected) {
+    @Test
+    public void testSumAmount() {
         StatsService service = new StatsService();
 
-        double actual = service.getSumAmount();
+        double[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        int expected = 180;
+        double actual = service.getSumAmount(sales);
 
         Assertions.assertEquals(expected, actual);
     }
 
-    @ParameterizedTest
-    @CsvSource({
-            "15"
-    })
-    public void getAvgSum(int expected) {
+    @Test
+    public void getAvgSum() {
         StatsService service = new StatsService();
 
-        double actual = service.getAvgSum();
+        double[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        double expected = 15;
+        double actual = service.getAvgSum(sales);
 
         Assertions.assertEquals(expected, actual);
     }
 
-    @ParameterizedTest
-    @CsvSource({
-            "8"
-    })
-    public void maxSalesMonth(int expected) {
+    @Test
+
+    public void maxSalesMonth() {
         StatsService service = new StatsService();
 
-        int actual = service.maxSalesMonth();
+        double[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        int expected = 8;
+        int actual = service.maxSalesMonth(sales);
 
         Assertions.assertEquals(expected, actual);
     }
 
-    @ParameterizedTest
-    @CsvSource({
-            "9"
-    })
-    public void minSalesMonth(int expected) {
+    @Test
+
+    public void minSalesMonth() {
         StatsService service = new StatsService();
 
-        int actual = service.minSalesMonth();
+        double[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        int expected = 9;
+        int actual = service.minSalesMonth(sales);
 
         Assertions.assertEquals(expected, actual);
     }
 
-    @ParameterizedTest
-    @CsvSource({
-            "5"
-    })
-    public void monthNumberLow(int expected) {
+    @Test
+
+    public void monthNumberLow() {
         StatsService service = new StatsService();
 
-        int actual = service.monthNumberLow();
+        double[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        int expected = 5;
+        int actual = service.monthNumberLow(sales);
 
         Assertions.assertEquals(expected, actual);
     }
 
-    @ParameterizedTest
-    @CsvSource({
-            "5"
-    })
-    public void monthNumberHigh(int expected) {
+    @Test
+
+    public void monthNumberHigh() {
         StatsService service = new StatsService();
 
-        int actual = service.monthNumberHigh();
+        double[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        int expected = 5;
+        int actual = service.monthNumberHigh(sales);
 
         Assertions.assertEquals(expected, actual);
 
