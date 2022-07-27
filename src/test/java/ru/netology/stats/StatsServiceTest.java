@@ -9,10 +9,10 @@ public class StatsServiceTest {
     public void testSumAmount() {
         StatsService service = new StatsService();
 
-        double[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expected = 180;
-        double actual = service.getSumAmount(sales);
+        long actual = service.getSumAmount(sales);
+        long expected = 8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18;
 
         Assertions.assertEquals(expected, actual);
     }
@@ -21,10 +21,10 @@ public class StatsServiceTest {
     public void getAvgSum() {
         StatsService service = new StatsService();
 
-        double[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        double expected = 15;
-        double actual = service.getAvgSum(sales);
+       long actual = service.getAvgSum(sales);
+        long expected = (8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18) / 12;
 
         Assertions.assertEquals(expected, actual);
     }
@@ -34,7 +34,7 @@ public class StatsServiceTest {
     public void maxSalesMonth() {
         StatsService service = new StatsService();
 
-        double[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 8;
         int actual = service.maxSalesMonth(sales);
@@ -47,7 +47,7 @@ public class StatsServiceTest {
     public void minSalesMonth() {
         StatsService service = new StatsService();
 
-        double[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 9;
         int actual = service.minSalesMonth(sales);
@@ -60,7 +60,7 @@ public class StatsServiceTest {
     public void monthNumberLow() {
         StatsService service = new StatsService();
 
-        double[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 5;
         int actual = service.monthNumberLow(sales);
@@ -73,7 +73,7 @@ public class StatsServiceTest {
     public void monthNumberHigh() {
         StatsService service = new StatsService();
 
-        double[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 5;
         int actual = service.monthNumberHigh(sales);
